@@ -25,4 +25,8 @@
         <Compile Remove="Tests\**" Condition="'$(Configuration)' != 'Debug'" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Properties\" />
+    </ItemGroup>
+
 </Project>

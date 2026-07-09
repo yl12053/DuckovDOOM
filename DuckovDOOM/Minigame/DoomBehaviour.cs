@@ -45,11 +45,12 @@ public class DoomBehaviour: MiniGameBehaviour
         }
         
         var musicComp = music.GetComponent<AudioBehaviour>();
-        musicComp.func = fetchMusicData;
-    }
-    
-    private void fetchMusicData(float[] samples, int channel)
-    {
+        musicComp.func = (floats) =>
+        {
+            if (Doom.Disposed || Doom.music.IsDisposed) return;
+            Doom.music.stream.OnGetData(floats, 2, 0);
+        };
+        musicComp.Play();
     }
     
     private void GamingConsoleInteractChanged(bool attached)

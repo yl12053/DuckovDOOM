@@ -6,14 +6,38 @@ namespace DuckovDOOM.Minigame;
 public class AudioBehaviour: MonoBehaviour
 {
     private AudioSource audioSource;
-    public Action<float[], int>? func = null;
+    public Action<float[]>? func = null;
     
     void Awake()
     {
-        Debug.Log("Awake");
+        Debug.Log("Awake==");
         audioSource = GetComponent<AudioSource>();
         audioSource.volume = 1;
-        audioSource.clip = null;
+        AudioClip audioClip = AudioClip.Create(
+            "DOOM",
+            2048,
+            2,
+            44100,
+            true,
+            (reader) =>
+            {
+                Debug.Log("Generate");
+                if (func == null)
+                {
+                    for (int i = 0; i < reader.Length; i++)
+                    {
+                        reader[i] = 0;
+                    }
+                }
+                else
+                {
+                    Debug.Log("Generate--");
+                    func(reader);
+                }
+            }
+        );
+        audioSource.clip = audioClip;
+        
         audioSource.loop = true;
         audioSource.Play();
     }
@@ -22,14 +46,7 @@ public class AudioBehaviour: MonoBehaviour
     {
         Debug.Log("Called play");
         audioSource.volume = 1;
-        audioSource.clip = null;
         audioSource.loop = true;
         audioSource.Play();
-    }
-
-    private void OnAudioFilterRead(float[] data, int channels)
-    {
-        Debug.Log("Audio Filter");
-        func?.Invoke(data, channels);
     }
 }

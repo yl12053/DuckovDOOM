@@ -13,6 +13,7 @@ public class Doom
     public static void Init()
     {
         var minigameBase = MinigameUtil.NewMinigameBase(new Identifier("DuckovDOOM", "doom"), out var camera, out var ui);
+        minigameBase.AddComponent<AudioListener>();
         minigameBase.GetComponent<MiniGame>().tickTiming = MiniGame.TickTiming.Update;
         camera.orthographic = true;
         camera.orthographicSize = 160f;
