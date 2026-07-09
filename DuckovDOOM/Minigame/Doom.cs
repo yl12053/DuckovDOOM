@@ -22,6 +22,11 @@ public class Doom
 
         var doombehaviour = minigameBase.gameObject.AddComponent<DoomBehaviour>();
         doombehaviour.wadName = "doomu.wad";
+
+        var musicObj = new GameObject("DoomMusic");
+        musicObj.transform.SetParent(minigameBase.transform, false);
+        musicObj.AddComponent<AudioSource>();
+        musicObj.AddComponent<AudioBehaviour>();
         
         var screen = GameObject.CreatePrimitive(PrimitiveType.Quad);
         screen.layer = 30;

@@ -12,10 +12,9 @@ public class DoomBehaviour: MiniGameBehaviour
 {
     private DuckovDoom? Doom;
     public string wadName;
-    
-    protected override void Start()
+
+    private void StartDoom()
     {
-        base.Start();
         Doom = new(new CommandLineArgs(new[]
         {
             "-iwad",
@@ -36,12 +35,44 @@ public class DoomBehaviour: MiniGameBehaviour
             return;
         }
         
-        renderer.material.mainTexture = Doom.video.Texture; 
+        renderer.material.mainTexture = Doom.video.Texture;
+
+        var music = Game.gameObject.transform.Find("DoomMusic");
+        if (music == null)
+        {
+            Debug.LogError("Cant find music component");
+            return;
+        }
+        
+        var musicComp = music.GetComponent<AudioBehaviour>();
+        musicComp.func = fetchMusicData;
+    }
+    
+    private void fetchMusicData(float[] samples, int channel)
+    {
+    }
+    
+    private void GamingConsoleInteractChanged(bool attached)
+    {
+        if (attached)
+        {
+            if (Doom == null || Doom.Disposed) StartDoom();
+        }
+    }
+    
+    protected override void Start()
+    {
+        base.Start();
+        StartDoom();
+        GamingConsole.OnGamingConsoleInteractChanged += GamingConsoleInteractChanged;
     }
 
     protected override void OnDisable()
     {
         base.OnDisable();
+        GamingConsole.OnGamingConsoleInteractChanged -= GamingConsoleInteractChanged;
+        if (Doom == null) return;
+        if (Doom.Disposed) return;
         Doom.Dispose();
         Doom = null;
     }
@@ -49,12 +80,15 @@ public class DoomBehaviour: MiniGameBehaviour
     protected override void OnUpdate(float deltaTime)
     {
         base.OnUpdate(deltaTime);
+        if (Doom == null) return;
+        if (Doom.Disposed) return;
         Doom.DoUpdate(deltaTime);
     }
 
     protected void OnGUI()
     {
         if (Doom == null) return;
+        if (Doom.Disposed) return;
         Event e = Event.current;
         if (e != null && e.isKey)
         {

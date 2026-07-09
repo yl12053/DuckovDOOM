@@ -36,6 +36,17 @@ public class ModBehaviour : Duckov.Modding.ModBehaviour, IHasModid
         var settingsBuilder = SettingsBuilder.Create(info);
         cfg = new Config(settingsBuilder);
         Instance = this;
+
+        ShopGoodsData cartidge = new ShopGoodsData()
+        {
+            merchantProfileID = "Merchant_Normal",
+            itemIdentifier = new("DuckovDOOM", "doom"),
+            maxStock = 1,
+            forceUnlock = true,
+            priceFactor = 1,
+            possibility = 1
+        };
+        ShopUtils.AddGoods(cartidge);
     }
 
     protected void OnDisable()
