@@ -14,7 +14,7 @@ public class Items
         ItemData cartridge = new ItemData();
         cartridge.itemId = 379720;
         cartridge.localizationKey = "DuckovDOOM.item.name.doomcartridge";
-        cartridge.localizationDesc = "DuckovDOOM.item.desc.doomcartridge";
+        cartridge.localizationDesc = "DuckovDOOM.item.name.doomcartridge_Desc";
         cartridge.weight = 0.1f;
         cartridge.value = 155;
         cartridge.quality = 5;

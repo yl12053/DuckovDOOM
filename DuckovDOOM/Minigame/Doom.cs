@@ -23,11 +23,6 @@ public class Doom
 
         var doombehaviour = minigameBase.gameObject.AddComponent<DoomBehaviour>();
         doombehaviour.wadName = "doomu.wad";
-
-        var musicObj = new GameObject("DoomMusic");
-        musicObj.transform.SetParent(minigameBase.transform, false);
-        musicObj.AddComponent<AudioSource>();
-        musicObj.AddComponent<AudioBehaviour>();
         
         var screen = GameObject.CreatePrimitive(PrimitiveType.Quad);
         screen.layer = 30;
@@ -35,15 +30,24 @@ public class Doom
         
         screen.transform.SetParent(minigameBase.transform, false);
         screen.transform.localPosition = new Vector3(0, 0, 5);
-        screen.transform.localScale = new Vector3(320, 480, 1);
+        // screen.transform.localScale = new Vector3(320, 480, 1);
+        screen.transform.localScale = new Vector3(310, 420, 1);
         screen.transform.localRotation = Quaternion.AngleAxis(-90, Vector3.forward);
         var renderer = screen.GetComponent<Renderer>();
         renderer.material = new Material(Shader.Find("UI/Default"));
+
+        GameObject back = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        back.layer = 30;
+        back.name = "BACKGROUND";
+        back.transform.SetParent(minigameBase.transform, false);
+        back.transform.localPosition = new Vector3(0, 0, 10);
+        back.transform.localScale = new Vector3(480, 320, 1);
+        Object.Destroy(back.GetComponent<Collider>());
+
+        var rendererBg = back.GetComponent<MeshRenderer>();
+        rendererBg.material = new Material(Shader.Find("UI/Default"));
+        rendererBg.material.color = Color.black;
         
         MinigameUtil.RegisterMinigame(new Identifier("DuckovDOOM", "doom"), minigameBase);
-        if (MinigameUtil.Instance.MinigameRegistry.Get(new Identifier("DuckovDOOM", "doom")) == null)
-        {
-            Debug.Log("Unexpected null");
-        }
     }
 }

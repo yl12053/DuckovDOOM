@@ -13,12 +13,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Krafs.Publicizer" Version="2.3.0">
-            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-        </PackageReference>
-    </ItemGroup>
-
-    <ItemGroup>
         <Compile Remove="Resources\**" />
         <EmbeddedResource Remove="Resources\**" />
         <None Remove="Resources\**" />

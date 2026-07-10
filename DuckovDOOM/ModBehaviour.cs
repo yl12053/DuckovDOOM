@@ -1,8 +1,11 @@
 using System;
 using System.Reflection;
+using Duckov;
 using Duckov.MiniGames;
+using DuckovDOOM.Mixin;
 using FeatherMod;
 using FeatherMod.Utils;
+using HarmonyLib;
 using ManagedDoom;
 using ManagedDoom.Duckov;
 using ModSetting;
@@ -16,8 +19,10 @@ public class ModBehaviour : Duckov.Modding.ModBehaviour, IHasModid
 {
     private bool hasGrab = false;
 
-    public static ModBehaviour Instance { get; private set; }
-    public Config cfg { get; private set; }
+    public static ModBehaviour? Instance { get; private set; }
+    public Config? cfg { get; private set; }
+
+    private Harmony? harmony;
     
     public string GetModid()
     {
@@ -27,6 +32,11 @@ public class ModBehaviour : Duckov.Modding.ModBehaviour, IHasModid
     protected override void OnAfterSetup()
     {
         base.OnAfterSetup();
+        harmony = new Harmony(GetModid());
+        Type busType = typeof(AudioManager).GetNestedType("Bus", BindingFlags.Public | BindingFlags.Instance);
+        var getter = AccessTools.PropertyGetter(busType, "Volume");
+        var postfix = typeof(BusMixin).GetMethod("PostfixVolume", BindingFlags.Public | BindingFlags.Static);
+        harmony.Patch(getter, postfix: new HarmonyMethod(postfix));
         ModPathResolver.Register(GetModid(), Assembly.GetExecutingAssembly().Location);
         I18n.InitI18n(GetModid());
         Items.Init();
@@ -51,9 +61,11 @@ public class ModBehaviour : Duckov.Modding.ModBehaviour, IHasModid
 
     protected void OnDisable()
     {
+        harmony?.UnpatchAll();
         GamingConsole.OnGamingConsoleInteractChanged -= Change;
         DuckovVideo.query = () => false;
         Setting.Clear();
+        Instance = null;
     }
 
     private void Change(bool val)
