@@ -24,11 +24,8 @@ public class QuestsHandler
                     {
                         Initialization = (tasks) =>
                         {
-                            tasks.targetLevel = new DoomEventHandler.LevelIndicator
-                            {
-                                episode = 1,
-                                map = 1
-                            };
+                            tasks.episode = 1;
+                            tasks.map = 1;
                             tasks.cartidge = "doom.wad";
                             tasks.cartidgeTranslateKey = "DuckovDOOM.item.name.doomcartridge";
                         }
@@ -61,11 +58,8 @@ public class QuestsHandler
         {
             Initialization = (tasks) =>
             {
-                tasks.targetLevel = new DoomEventHandler.LevelIndicator
-                {
-                    episode = 0,
-                    map = 1
-                };
+                tasks.episode = 0;
+                tasks.map = 1;
                 tasks.cartidge = "doom2.wad";
                 tasks.cartidgeTranslateKey = "DuckovDOOM.item.name.doomcartridge2";
             }

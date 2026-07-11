@@ -11,9 +11,22 @@ namespace DuckovDOOM.Quests;
 
 public class TaskDoomBreakLevel : Task
 {
-    public DoomEventHandler.LevelIndicator targetLevel;
+    private DoomEventHandler.LevelIndicator? _targetLevel;
+
+    public DoomEventHandler.LevelIndicator targetLevel
+    {
+        get
+        {
+            if (_targetLevel == null)
+                _targetLevel = new DoomEventHandler.LevelIndicator { episode = episode, map = map };
+            return _targetLevel;
+        }
+    }
+
     public string cartidge = String.Empty;
     public string cartidgeTranslateKey = String.Empty;
+    public int episode = 0;
+    public int map = 0;
 
     public static string LevelFormatter(DoomEventHandler.LevelIndicator indicator)
     {
