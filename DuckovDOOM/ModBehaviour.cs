@@ -5,6 +5,7 @@ using Duckov.MiniGames;
 using DuckovDOOM.Mixin;
 using FeatherMod;
 using FeatherMod.Events;
+using FeatherMod.Events.GameEvents;
 using FeatherMod.Register;
 using FeatherMod.Utils;
 using HarmonyLib;
@@ -48,6 +49,7 @@ public class ModBehaviour : Duckov.Modding.ModBehaviour, IHasModid
         DuckovVideo.query = () => hasGrab;
         var settingsBuilder = SettingsBuilder.Create(info);
         cfg = new Config(settingsBuilder);
+        EventBusManager.Instance.Sync.Register<LanguageChangedEvent>(evt => cfg.refreshUI(), -1);
         Instance = this;
 
         ShopGoodsData cartidge = new ShopGoodsData()
