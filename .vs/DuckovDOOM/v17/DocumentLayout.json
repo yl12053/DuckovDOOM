@@ -3,12 +3,36 @@
   "WorkspaceRootPath": "D:\\duckov_modding\\DuckovDOOM\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B5518FEA-C699-4C55-A6D1-6DF2E3AC4667}|DuckovDOOM\\DuckovDOOM.csproj|d:\\duckov_modding\\duckovdoom\\duckovdoom\\modbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5518FEA-C699-4C55-A6D1-6DF2E3AC4667}|DuckovDOOM\\DuckovDOOM.csproj|solutionrelative:duckovdoom\\modbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B5518FEA-C699-4C55-A6D1-6DF2E3AC4667}|DuckovDOOM\\DuckovDOOM.csproj|d:\\duckov_modding\\duckovdoom\\duckovdoom\\quests\\questshandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5518FEA-C699-4C55-A6D1-6DF2E3AC4667}|DuckovDOOM\\DuckovDOOM.csproj|solutionrelative:duckovdoom\\quests\\questshandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B5518FEA-C699-4C55-A6D1-6DF2E3AC4667}|DuckovDOOM\\DuckovDOOM.csproj|d:\\duckov_modding\\duckovdoom\\duckovdoom\\items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B5518FEA-C699-4C55-A6D1-6DF2E3AC4667}|DuckovDOOM\\DuckovDOOM.csproj|solutionrelative:duckovdoom\\items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5518FEA-C699-4C55-A6D1-6DF2E3AC4667}|DuckovDOOM\\DuckovDOOM.csproj|d:\\duckov_modding\\duckovdoom\\duckovdoom\\minigame\\doombehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5518FEA-C699-4C55-A6D1-6DF2E3AC4667}|DuckovDOOM\\DuckovDOOM.csproj|solutionrelative:duckovdoom\\minigame\\doombehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5518FEA-C699-4C55-A6D1-6DF2E3AC4667}|DuckovDOOM\\DuckovDOOM.csproj|d:\\duckov_modding\\duckovdoom\\duckovdoom\\minigame\\doomutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5518FEA-C699-4C55-A6D1-6DF2E3AC4667}|DuckovDOOM\\DuckovDOOM.csproj|solutionrelative:duckovdoom\\minigame\\doomutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5518FEA-C699-4C55-A6D1-6DF2E3AC4667}|DuckovDOOM\\DuckovDOOM.csproj|d:\\duckov_modding\\duckovdoom\\duckovdoom\\mixin\\busmixin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5518FEA-C699-4C55-A6D1-6DF2E3AC4667}|DuckovDOOM\\DuckovDOOM.csproj|solutionrelative:duckovdoom\\mixin\\busmixin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5518FEA-C699-4C55-A6D1-6DF2E3AC4667}|DuckovDOOM\\DuckovDOOM.csproj|d:\\duckov_modding\\duckovdoom\\duckovdoom\\minigame\\doom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5518FEA-C699-4C55-A6D1-6DF2E3AC4667}|DuckovDOOM\\DuckovDOOM.csproj|solutionrelative:duckovdoom\\minigame\\doom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5518FEA-C699-4C55-A6D1-6DF2E3AC4667}|DuckovDOOM\\DuckovDOOM.csproj|d:\\duckov_modding\\duckovdoom\\duckovdoom\\modbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5518FEA-C699-4C55-A6D1-6DF2E3AC4667}|DuckovDOOM\\DuckovDOOM.csproj|solutionrelative:duckovdoom\\modbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5518FEA-C699-4C55-A6D1-6DF2E3AC4667}|DuckovDOOM\\DuckovDOOM.csproj|d:\\duckov_modding\\duckovdoom\\duckovdoom\\quests\\taskdoombreaklevel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5518FEA-C699-4C55-A6D1-6DF2E3AC4667}|DuckovDOOM\\DuckovDOOM.csproj|solutionrelative:duckovdoom\\quests\\taskdoombreaklevel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B5518FEA-C699-4C55-A6D1-6DF2E3AC4667}|DuckovDOOM\\DuckovDOOM.csproj|d:\\duckov_modding\\duckovdoom\\duckovdoom\\duckovdoom.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
@@ -30,17 +54,95 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DoomBehaviour.cs",
+              "DocumentMoniker": "D:\\duckov_modding\\DuckovDOOM\\DuckovDOOM\\Minigame\\DoomBehaviour.cs",
+              "RelativeDocumentMoniker": "DuckovDOOM\\Minigame\\DoomBehaviour.cs",
+              "ToolTip": "D:\\duckov_modding\\DuckovDOOM\\DuckovDOOM\\Minigame\\DoomBehaviour.cs",
+              "RelativeToolTip": "DuckovDOOM\\Minigame\\DoomBehaviour.cs",
+              "ViewState": "AgIAAPgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-11T13:08:52.188Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DoomUtils.cs",
+              "DocumentMoniker": "D:\\duckov_modding\\DuckovDOOM\\DuckovDOOM\\Minigame\\DoomUtils.cs",
+              "RelativeDocumentMoniker": "DuckovDOOM\\Minigame\\DoomUtils.cs",
+              "ToolTip": "D:\\duckov_modding\\DuckovDOOM\\DuckovDOOM\\Minigame\\DoomUtils.cs",
+              "RelativeToolTip": "DuckovDOOM\\Minigame\\DoomUtils.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-11T13:08:50.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BusMixin.cs",
+              "DocumentMoniker": "D:\\duckov_modding\\DuckovDOOM\\DuckovDOOM\\Mixin\\BusMixin.cs",
+              "RelativeDocumentMoniker": "DuckovDOOM\\Mixin\\BusMixin.cs",
+              "ToolTip": "D:\\duckov_modding\\DuckovDOOM\\DuckovDOOM\\Mixin\\BusMixin.cs",
+              "RelativeToolTip": "DuckovDOOM\\Mixin\\BusMixin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-11T13:07:54.457Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "QuestsHandler.cs",
+              "DocumentMoniker": "D:\\duckov_modding\\DuckovDOOM\\DuckovDOOM\\Quests\\QuestsHandler.cs",
+              "RelativeDocumentMoniker": "DuckovDOOM\\Quests\\QuestsHandler.cs",
+              "ToolTip": "D:\\duckov_modding\\DuckovDOOM\\DuckovDOOM\\Quests\\QuestsHandler.cs",
+              "RelativeToolTip": "DuckovDOOM\\Quests\\QuestsHandler.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAABwAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-11T13:02:26.866Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TaskDoomBreakLevel.cs",
+              "DocumentMoniker": "D:\\duckov_modding\\DuckovDOOM\\DuckovDOOM\\Quests\\TaskDoomBreakLevel.cs",
+              "RelativeDocumentMoniker": "DuckovDOOM\\Quests\\TaskDoomBreakLevel.cs",
+              "ToolTip": "D:\\duckov_modding\\DuckovDOOM\\DuckovDOOM\\Quests\\TaskDoomBreakLevel.cs",
+              "RelativeToolTip": "DuckovDOOM\\Quests\\TaskDoomBreakLevel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-11T13:02:26.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Doom.cs",
+              "DocumentMoniker": "D:\\duckov_modding\\DuckovDOOM\\DuckovDOOM\\Minigame\\Doom.cs",
+              "RelativeDocumentMoniker": "DuckovDOOM\\Minigame\\Doom.cs",
+              "ToolTip": "D:\\duckov_modding\\DuckovDOOM\\DuckovDOOM\\Minigame\\Doom.cs",
+              "RelativeToolTip": "DuckovDOOM\\Minigame\\Doom.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAACFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-11T12:58:52.141Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "ModBehaviour.cs",
               "DocumentMoniker": "D:\\duckov_modding\\DuckovDOOM\\DuckovDOOM\\ModBehaviour.cs",
               "RelativeDocumentMoniker": "DuckovDOOM\\ModBehaviour.cs",
               "ToolTip": "D:\\duckov_modding\\DuckovDOOM\\DuckovDOOM\\ModBehaviour.cs",
               "RelativeToolTip": "DuckovDOOM\\ModBehaviour.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAAADEAAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-11T07:29:59.699Z",
               "EditorCaption": ""
@@ -53,14 +155,14 @@
               "RelativeDocumentMoniker": "DuckovDOOM\\Items.cs",
               "ToolTip": "D:\\duckov_modding\\DuckovDOOM\\DuckovDOOM\\Items.cs",
               "RelativeToolTip": "DuckovDOOM\\Items.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABcAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-11T07:29:58.35Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "DuckovDOOM",
               "DocumentMoniker": "D:\\duckov_modding\\DuckovDOOM\\DuckovDOOM\\DuckovDOOM.csproj",
               "RelativeDocumentMoniker": "DuckovDOOM\\DuckovDOOM.csproj",
@@ -71,7 +173,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "ManagedDoom.csproj",
               "DocumentMoniker": "D:\\duckov_modding\\DuckovDOOM\\Managed\\ManagedDoom\\ManagedDoom.csproj",
               "RelativeDocumentMoniker": "Managed\\ManagedDoom\\ManagedDoom.csproj",
@@ -83,7 +185,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "DuckovDOOM.csproj",
               "DocumentMoniker": "D:\\duckov_modding\\DuckovDOOM\\DuckovDOOM\\DuckovDOOM.csproj",
               "RelativeDocumentMoniker": "DuckovDOOM\\DuckovDOOM.csproj",
