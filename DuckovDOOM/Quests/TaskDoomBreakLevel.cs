@@ -64,7 +64,7 @@ public class TaskDoomBreakLevel : Task
 
     public override object GenerateSaveData()
     {
-        return new object();
+        return true;
     }
 
     public override void SetupSaveData(object data)

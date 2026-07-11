@@ -19,33 +19,35 @@ public class QuestsHandler
             Id = new Identifier(ModBehaviour.Instance.GetModid(), "quest1"),
             questGiver = QuestGiverID.Ming,
             requireLevel = 1,
-            tasks = new List<TaskData>(),
-            rewards = new List<RewardData>()
-        };
-        quest1.tasks.Add(new TaskCustomTask<TaskDoomBreakLevel>
-        {
-            Initialization = (tasks) =>
-            {
-                tasks.targetLevel = new DoomEventHandler.LevelIndicator
-                {
-                    episode = 1,
-                    map = 1
-                };
-                tasks.cartidge = "doom.wad";
-                tasks.cartidgeTranslateKey = "DuckovDOOM.item.name.doomcartridge";
+            tasks = {
+                        new TaskCustomTask<TaskDoomBreakLevel>
+                    {
+                        Initialization = (tasks) =>
+                        {
+                            tasks.targetLevel = new DoomEventHandler.LevelIndicator
+                            {
+                                episode = 1,
+                                map = 1
+                            };
+                            tasks.cartidge = "doom.wad";
+                            tasks.cartidgeTranslateKey = "DuckovDOOM.item.name.doomcartridge";
+                        }
+                    }
+            },
+            rewards = {
+            new RewardMoney
+                    {
+                        amount = 1000
+                    },
+            new RewardEXP
+                    {
+                        amount = 250
+                    }
             }
-        });
-        quest1.rewards.Add(new RewardMoney
-        {
-            amount = 1000
-        });
-        quest1.rewards.Add(new RewardEXP
-        {
-            amount = 250
-        });
+        };
         QuestUtils.RegisterQuest(quest1, ModBehaviour.Instance.GetModid());
         QuestUtils.TryGetQuestIdentifier(111, out var rootId);
-        QuestUtils.AddQuestRelation(quest1.Id, rootId, null);
+        QuestUtils.AddQuestRelation(quest1.Id, rootId);
         
         var quest2 = new QuestData()
         {
@@ -54,10 +56,8 @@ public class QuestsHandler
             Id = new Identifier(ModBehaviour.Instance.GetModid(), "quest2"),
             questGiver = QuestGiverID.Ming,
             requireLevel = 1,
-            tasks = new List<TaskData>(),
-            rewards = new List<RewardData>()
-        };
-        quest2.tasks.Add(new TaskCustomTask<TaskDoomBreakLevel>
+            tasks = {
+            new TaskCustomTask<TaskDoomBreakLevel>
         {
             Initialization = (tasks) =>
             {
@@ -69,16 +69,21 @@ public class QuestsHandler
                 tasks.cartidge = "doom2.wad";
                 tasks.cartidgeTranslateKey = "DuckovDOOM.item.name.doomcartridge2";
             }
-        });
-        quest2.rewards.Add(new RewardMoney
-        {
-            amount = 1000
-        });
-        quest2.rewards.Add(new RewardEXP
-        {
-            amount = 250
-        });
+        }
+            },
+            rewards = {
+            new RewardMoney
+                {
+                    amount = 1000
+                },
+            new RewardEXP
+                {
+                    amount = 250
+                }
+            }
+        };
+
         QuestUtils.RegisterQuest(quest2, ModBehaviour.Instance.GetModid());
-        QuestUtils.AddQuestRelation(quest2.Id, rootId, null);
+        QuestUtils.AddQuestRelation(quest2.Id, rootId);
     }
 }
