@@ -42,7 +42,7 @@ public class DoomBehaviour: MiniGameBehaviour
         {
             "-iwad",
             Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), wadName)
-        }), ModBehaviour.Instance?.cfg, Game);
+        }), ModBehaviour.Instance?.cfg, Game, wadName);
         Doom.DoStart(DuckovVideo.query() ? 1f : 0f);
         var disp = Game.gameObject.transform.Find("DoomDisplay");
         if (disp == null)

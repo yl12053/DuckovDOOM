@@ -12,7 +12,13 @@ public class Doom
 {
     public static void Init()
     {
-        var minigameBase = MinigameUtil.NewMinigameBase(new Identifier("DuckovDOOM", "doom"), out var camera, out var ui);
+        MinigameUtil.RegisterMinigame(new Identifier("DuckovDOOM", "doom"), makeDoom("freedoom1.wad", new Identifier("DuckovDOOM", "doom")));
+        MinigameUtil.RegisterMinigame(new Identifier("DuckovDOOM", "doom2"), makeDoom("freedoom2.wad", new Identifier("DuckovDOOM", "doom2")));
+    }
+
+    public static GameObject makeDoom(string wad, Identifier identifier)
+    {
+        var minigameBase = MinigameUtil.NewMinigameBase(identifier, out var camera, out var ui);
         minigameBase.AddComponent<AudioListener>();
         minigameBase.GetComponent<MiniGame>().tickTiming = MiniGame.TickTiming.Update;
         camera.orthographic = true;
@@ -22,7 +28,7 @@ public class Doom
         ui.clearFlags = CameraClearFlags.Nothing;
 
         var doombehaviour = minigameBase.gameObject.AddComponent<DoomBehaviour>();
-        doombehaviour.wadName = "doomu.wad";
+        doombehaviour.wadName = wad;
         
         var screen = GameObject.CreatePrimitive(PrimitiveType.Quad);
         screen.layer = 30;
@@ -47,7 +53,7 @@ public class Doom
         var rendererBg = back.GetComponent<MeshRenderer>();
         rendererBg.material = new Material(Shader.Find("UI/Default"));
         rendererBg.material.color = Color.black;
-        
-        MinigameUtil.RegisterMinigame(new Identifier("DuckovDOOM", "doom"), minigameBase);
+
+        return minigameBase;
     }
 }

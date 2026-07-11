@@ -4,10 +4,13 @@ using Duckov;
 using Duckov.MiniGames;
 using DuckovDOOM.Mixin;
 using FeatherMod;
+using FeatherMod.Events;
+using FeatherMod.Register;
 using FeatherMod.Utils;
 using HarmonyLib;
 using ManagedDoom;
 using ManagedDoom.Duckov;
+using ManagedDoom.Event;
 using ModSetting;
 using ModSetting.Api;
 using UnityEngine;
@@ -57,6 +60,10 @@ public class ModBehaviour : Duckov.Modding.ModBehaviour, IHasModid
             possibility = 1
         };
         ShopUtils.AddGoods(cartidge);
+        
+        EventBusManager.Instance.Sync.Register<DoomFinishedLevel>(level => Debug.Log($"Finished level: {level.wadName}:{level.episode},{level.map}"), 0, RegistryManager.CurrentModid);
+        EventBusManager.Instance.Sync.Register<DoomLoadLevel>(level => Debug.Log($"Loaded level: {level.wadName}:{level.episode},{level.map}"), 0, RegistryManager.CurrentModid);
+        EventBusManager.Instance.Sync.Register<DoomPickupWeapon>(level => Debug.Log($"Grabbed weapon: {level.weapon}?{level.isDroppedFromEnemy}"), 0, RegistryManager.CurrentModid);
     }
 
     protected void OnDisable()

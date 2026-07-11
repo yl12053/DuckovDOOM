@@ -24,5 +24,19 @@ public class Items
         cartridge.tags.Add("Cartridge");
         
         ItemUtils.CreateCustomCartridge(new Identifier("DuckovDOOM", "doom"), new Identifier("DuckovDOOM", "doom"), cartridge);
+        
+        ItemData cartridge2 = new ItemData();
+        cartridge2.itemId = 379721;
+        cartridge2.localizationKey = "DuckovDOOM.item.name.doomcartridge2";
+        cartridge2.localizationDesc = "DuckovDOOM.item.name.doomcartridge2_Desc";
+        cartridge2.weight = 0.1f;
+        cartridge2.value = 155;
+        cartridge2.quality = 5;
+        cartridge2.displayQuality = DisplayQuality.Orange;
+        cartridge2.spritePath = "doom2.png";
+        cartridge2.tags = new List<string>();
+        cartridge2.tags.Add("Cartridge");
+        
+        ItemUtils.CreateCustomCartridge(new Identifier("DuckovDOOM", "doom2"), new Identifier("DuckovDOOM", "doom2"), cartridge2);
     }
 }
