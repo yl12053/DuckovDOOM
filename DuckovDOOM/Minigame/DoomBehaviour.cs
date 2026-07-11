@@ -38,12 +38,13 @@ public class DoomBehaviour: MiniGameBehaviour
 
     private void StartDoom()
     {
+        if (ModBehaviour.Instance == null) return;
         Doom = new(new CommandLineArgs(new[]
         {
             "-iwad",
             Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), wadName)
         }), ModBehaviour.Instance?.cfg, Game, wadName);
-        Doom.DoStart(DuckovVideo.query() ? 1f : 0f);
+        Doom.DoStart(DuckovVideo.query() ? 1f : 0f, ModBehaviour.Instance?.GetModid() ?? "");
         var disp = Game.gameObject.transform.Find("DoomDisplay");
         if (disp == null)
         {
@@ -245,7 +246,7 @@ public class DoomBehaviour: MiniGameBehaviour
     {
         if (Doom == null) return;
         if (Doom.Disposed) return;
-        Event e = Event.current;
+        UnityEngine.Event e = UnityEngine.Event.current;
         if (e != null && e.isKey)
         {
             if (e.type == UnityEngine.EventType.KeyDown)

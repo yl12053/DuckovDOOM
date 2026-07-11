@@ -11,6 +11,7 @@ public class Items
 {
     public static void Init()
     {
+        if (ModBehaviour.Instance == null) return;
         ItemData cartridge = new ItemData();
         cartridge.itemId = 379720;
         cartridge.localizationKey = "DuckovDOOM.item.name.doomcartridge";
@@ -23,7 +24,7 @@ public class Items
         cartridge.tags = new List<string>();
         cartridge.tags.Add("Cartridge");
         
-        ItemUtils.CreateCustomCartridge(new Identifier("DuckovDOOM", "doom"), new Identifier("DuckovDOOM", "doom"), cartridge);
+        ItemUtils.CreateCustomCartridge(new Identifier(ModBehaviour.Instance.GetModid(), "doom"), new Identifier(ModBehaviour.Instance.GetModid(), "doom"), cartridge);
         
         ItemData cartridge2 = new ItemData();
         cartridge2.itemId = 379721;
@@ -37,6 +38,6 @@ public class Items
         cartridge2.tags = new List<string>();
         cartridge2.tags.Add("Cartridge");
         
-        ItemUtils.CreateCustomCartridge(new Identifier("DuckovDOOM", "doom2"), new Identifier("DuckovDOOM", "doom2"), cartridge2);
+        ItemUtils.CreateCustomCartridge(new Identifier(ModBehaviour.Instance.GetModid(), "doom2"), new Identifier(ModBehaviour.Instance.GetModid(), "doom2"), cartridge2);
     }
 }

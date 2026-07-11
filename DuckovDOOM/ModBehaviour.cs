@@ -2,7 +2,9 @@ using System;
 using System.Reflection;
 using Duckov;
 using Duckov.MiniGames;
+using DuckovDOOM.Event;
 using DuckovDOOM.Mixin;
+using DuckovDOOM.Quests;
 using FeatherMod;
 using FeatherMod.Events;
 using FeatherMod.Events.GameEvents;
@@ -36,6 +38,7 @@ public class ModBehaviour : Duckov.Modding.ModBehaviour, IHasModid
     protected override void OnAfterSetup()
     {
         base.OnAfterSetup();
+        Instance = this;
         harmony = new Harmony(GetModid());
         Type busType = typeof(AudioManager).GetNestedType("Bus", BindingFlags.Public | BindingFlags.Instance);
         var getter = AccessTools.PropertyGetter(busType, "Volume");
@@ -50,12 +53,11 @@ public class ModBehaviour : Duckov.Modding.ModBehaviour, IHasModid
         var settingsBuilder = SettingsBuilder.Create(info);
         cfg = new Config(settingsBuilder);
         EventBusManager.Instance.Sync.Register<LanguageChangedEvent>(evt => cfg.refreshUI(), -1);
-        Instance = this;
 
         ShopGoodsData cartidge = new ShopGoodsData()
         {
             merchantProfileID = "Merchant_Normal",
-            itemIdentifier = new("DuckovDOOM", "doom"),
+            itemIdentifier = new(GetModid(), "doom"),
             maxStock = 1,
             forceUnlock = true,
             priceFactor = 1,
@@ -63,9 +65,12 @@ public class ModBehaviour : Duckov.Modding.ModBehaviour, IHasModid
         };
         ShopUtils.AddGoods(cartidge);
         
-        EventBusManager.Instance.Sync.Register<DoomFinishedLevel>(level => Debug.Log($"Finished level: {level.wadName}:{level.episode},{level.map}"), 0, RegistryManager.CurrentModid);
-        EventBusManager.Instance.Sync.Register<DoomLoadLevel>(level => Debug.Log($"Loaded level: {level.wadName}:{level.episode},{level.map}"), 0, RegistryManager.CurrentModid);
-        EventBusManager.Instance.Sync.Register<DoomPickupWeapon>(level => Debug.Log($"Grabbed weapon: {level.weapon}?{level.isDroppedFromEnemy}"), 0, RegistryManager.CurrentModid);
+        EventBusManager.Instance.Sync.Register<DoomFinishedLevel>(level => Debug.Log($"Finished level: {level.wadName}:{level.episode},{level.map}"), 0, GetModid());
+        EventBusManager.Instance.Sync.Register<DoomLoadLevel>(level => Debug.Log($"Loaded level: {level.wadName}:{level.episode},{level.map}"), 0, GetModid());
+        EventBusManager.Instance.Sync.Register<DoomPickupWeapon>(level => Debug.Log($"Grabbed weapon: {level.weapon}?{level.isDroppedFromEnemy}"), 0, GetModid());
+        
+        DoomEventHandler.Init();
+        QuestsHandler.Init();
     }
 
     protected void OnDisable()
@@ -81,5 +86,10 @@ public class ModBehaviour : Duckov.Modding.ModBehaviour, IHasModid
     {
         hasGrab = val;
         Debug.Log("Changed stat");
+    }
+    
+    public static string getName(string raw)
+    {
+        return SodaCraft.Localizations.LocalizationManager.TryGetOverrideText(raw, out string name) ? name : raw;
     }
 }
