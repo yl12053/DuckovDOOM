@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Reflection;
 using Duckov;
 using Duckov.MiniGames;
@@ -64,7 +64,18 @@ public class ModBehaviour : Duckov.Modding.ModBehaviour, IHasModid
             possibility = 1
         };
         ShopUtils.AddGoods(cartidge);
-        
+
+        ShopGoodsData cartidge2 = new ShopGoodsData()
+        {
+            merchantProfileID = "Merchant_Normal",
+            itemIdentifier = new(GetModid(), "doom2"),
+            maxStock = 1,
+            forceUnlock = true,
+            priceFactor = 1,
+            possibility = 1
+        };
+        ShopUtils.AddGoods(cartidge2);
+
         EventBusManager.Instance.Sync.Register<DoomFinishedLevel>(level => Debug.Log($"Finished level: {level.wadName}:{level.episode},{level.map}"), 0, GetModid());
         EventBusManager.Instance.Sync.Register<DoomLoadLevel>(level => Debug.Log($"Loaded level: {level.wadName}:{level.episode},{level.map}"), 0, GetModid());
         EventBusManager.Instance.Sync.Register<DoomPickupWeapon>(level => Debug.Log($"Grabbed weapon: {level.weapon}?{level.isDroppedFromEnemy}"), 0, GetModid());

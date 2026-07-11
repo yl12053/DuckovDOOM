@@ -18,6 +18,7 @@ public class DoomEventHandler
     
     public static readonly int[] CALC = new[] { 3, 5, 6, 2 };
 
+    [Serializable]
     public class LevelIndicator: IComparable, IComparable<LevelIndicator>
     {
         public int episode;

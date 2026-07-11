@@ -13,8 +13,8 @@ public class Doom
     public static void Init()
     {
         if (ModBehaviour.Instance == null) return;
-        MinigameUtil.RegisterMinigame(new Identifier(ModBehaviour.Instance.GetModid(), "doom"), makeDoom("freedoom1.wad", new Identifier(ModBehaviour.Instance.GetModid(), "doom")));
-        MinigameUtil.RegisterMinigame(new Identifier(ModBehaviour.Instance.GetModid(), "doom2"), makeDoom("freedoom2.wad", new Identifier(ModBehaviour.Instance.GetModid(), "doom2")));
+        MinigameUtil.RegisterMinigame(new Identifier(ModBehaviour.Instance.GetModid(), "doom"), makeDoom("doom.wad", new Identifier(ModBehaviour.Instance.GetModid(), "doom")));
+        MinigameUtil.RegisterMinigame(new Identifier(ModBehaviour.Instance.GetModid(), "doom2"), makeDoom("doom2.wad", new Identifier(ModBehaviour.Instance.GetModid(), "doom2")));
     }
 
     public static GameObject makeDoom(string wad, Identifier identifier)
