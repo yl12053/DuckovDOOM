@@ -11,6 +11,8 @@ public class Items
 {
     public static void Init()
     {
+        var Bundle = AssetUtil.LoadBundle(new Identifier("DuckovDOOM", "doom"));
+
         ItemData cartridge = new ItemData();
         cartridge.itemId = 379720;
         cartridge.localizationKey = "DuckovDOOM.item.name.doomcartridge";
@@ -22,9 +24,12 @@ public class Items
         cartridge.spritePath = "doom.png";
         cartridge.tags = new List<string>();
         cartridge.tags.Add("Cartridge");
+
         
-        ItemUtils.CreateCustomCartridge(new Identifier("DuckovDOOM", "doom"), new Identifier("DuckovDOOM", "doom"), cartridge);
-        
+        var doom1_cartridge = ItemUtils.GetCustomCartridge(new Identifier("DuckovDOOM", "doom"), new Identifier("DuckovDOOM", "doom"), cartridge);
+        ItemUtils.SetItemGraphic(doom1_cartridge, Bundle, "ItemGraphic_DOOM");
+        ItemUtils.RegisterItem(new Identifier("DuckovDOOM", "doom"), doom1_cartridge);
+
         ItemData cartridge2 = new ItemData();
         cartridge2.itemId = 379721;
         cartridge2.localizationKey = "DuckovDOOM.item.name.doomcartridge2";
@@ -36,7 +41,9 @@ public class Items
         cartridge2.spritePath = "doom2.png";
         cartridge2.tags = new List<string>();
         cartridge2.tags.Add("Cartridge");
-        
-        ItemUtils.CreateCustomCartridge(new Identifier("DuckovDOOM", "doom2"), new Identifier("DuckovDOOM", "doom2"), cartridge2);
+
+        var doom2_cartridge = ItemUtils.GetCustomCartridge(new Identifier("DuckovDOOM", "doom2"), new Identifier("DuckovDOOM", "doom2"), cartridge2);
+        ItemUtils.SetItemGraphic(doom2_cartridge, Bundle, "ItemGraphic_DOOM2");
+        ItemUtils.RegisterItem(new Identifier("DuckovDOOM", "doom2"), doom2_cartridge);
     }
 }
